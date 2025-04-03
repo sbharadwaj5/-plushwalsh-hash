@@ -1,4 +1,4 @@
-# Install script for directory: /Users/shrads/Desktop/ADB/-plushwalsh-hash
+# Install script for directory: /Users/shrads/Desktop/ADB/-plushwalsh-hash/hashstore
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

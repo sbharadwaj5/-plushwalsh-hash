@@ -53,7 +53,7 @@ RM = /opt/homebrew/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/shrads/Desktop/ADB/-plushwalsh-hash
+CMAKE_SOURCE_DIR = /Users/shrads/Desktop/ADB/-plushwalsh-hash/hashstore
 
 # The top-level build directory on which CMake was run.
 CMAKE_BINARY_DIR = /Users/shrads/Desktop/ADB/-plushwalsh-hash/hashstore
@@ -86,17 +86,97 @@ CMakeFiles/hashstore.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/hashstore.dir/main.cpp.s"
 	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/shrads/Desktop/ADB/-plushwalsh-hash/hashstore/main.cpp -o CMakeFiles/hashstore.dir/main.cpp.s
 
+CMakeFiles/hashstore.dir/src/Bucket.cpp.o: CMakeFiles/hashstore.dir/flags.make
+CMakeFiles/hashstore.dir/src/Bucket.cpp.o: src/Bucket.cpp
+CMakeFiles/hashstore.dir/src/Bucket.cpp.o: CMakeFiles/hashstore.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/shrads/Desktop/ADB/-plushwalsh-hash/hashstore/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/hashstore.dir/src/Bucket.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/hashstore.dir/src/Bucket.cpp.o -MF CMakeFiles/hashstore.dir/src/Bucket.cpp.o.d -o CMakeFiles/hashstore.dir/src/Bucket.cpp.o -c /Users/shrads/Desktop/ADB/-plushwalsh-hash/hashstore/src/Bucket.cpp
+
+CMakeFiles/hashstore.dir/src/Bucket.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/hashstore.dir/src/Bucket.cpp.i"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/shrads/Desktop/ADB/-plushwalsh-hash/hashstore/src/Bucket.cpp > CMakeFiles/hashstore.dir/src/Bucket.cpp.i
+
+CMakeFiles/hashstore.dir/src/Bucket.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/hashstore.dir/src/Bucket.cpp.s"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/shrads/Desktop/ADB/-plushwalsh-hash/hashstore/src/Bucket.cpp -o CMakeFiles/hashstore.dir/src/Bucket.cpp.s
+
+CMakeFiles/hashstore.dir/src/HashStore.cpp.o: CMakeFiles/hashstore.dir/flags.make
+CMakeFiles/hashstore.dir/src/HashStore.cpp.o: src/HashStore.cpp
+CMakeFiles/hashstore.dir/src/HashStore.cpp.o: CMakeFiles/hashstore.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/shrads/Desktop/ADB/-plushwalsh-hash/hashstore/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/hashstore.dir/src/HashStore.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/hashstore.dir/src/HashStore.cpp.o -MF CMakeFiles/hashstore.dir/src/HashStore.cpp.o.d -o CMakeFiles/hashstore.dir/src/HashStore.cpp.o -c /Users/shrads/Desktop/ADB/-plushwalsh-hash/hashstore/src/HashStore.cpp
+
+CMakeFiles/hashstore.dir/src/HashStore.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/hashstore.dir/src/HashStore.cpp.i"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/shrads/Desktop/ADB/-plushwalsh-hash/hashstore/src/HashStore.cpp > CMakeFiles/hashstore.dir/src/HashStore.cpp.i
+
+CMakeFiles/hashstore.dir/src/HashStore.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/hashstore.dir/src/HashStore.cpp.s"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/shrads/Desktop/ADB/-plushwalsh-hash/hashstore/src/HashStore.cpp -o CMakeFiles/hashstore.dir/src/HashStore.cpp.s
+
+CMakeFiles/hashstore.dir/src/LogManager.cpp.o: CMakeFiles/hashstore.dir/flags.make
+CMakeFiles/hashstore.dir/src/LogManager.cpp.o: src/LogManager.cpp
+CMakeFiles/hashstore.dir/src/LogManager.cpp.o: CMakeFiles/hashstore.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/shrads/Desktop/ADB/-plushwalsh-hash/hashstore/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/hashstore.dir/src/LogManager.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/hashstore.dir/src/LogManager.cpp.o -MF CMakeFiles/hashstore.dir/src/LogManager.cpp.o.d -o CMakeFiles/hashstore.dir/src/LogManager.cpp.o -c /Users/shrads/Desktop/ADB/-plushwalsh-hash/hashstore/src/LogManager.cpp
+
+CMakeFiles/hashstore.dir/src/LogManager.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/hashstore.dir/src/LogManager.cpp.i"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/shrads/Desktop/ADB/-plushwalsh-hash/hashstore/src/LogManager.cpp > CMakeFiles/hashstore.dir/src/LogManager.cpp.i
+
+CMakeFiles/hashstore.dir/src/LogManager.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/hashstore.dir/src/LogManager.cpp.s"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/shrads/Desktop/ADB/-plushwalsh-hash/hashstore/src/LogManager.cpp -o CMakeFiles/hashstore.dir/src/LogManager.cpp.s
+
+CMakeFiles/hashstore.dir/src/PersistentTable.cpp.o: CMakeFiles/hashstore.dir/flags.make
+CMakeFiles/hashstore.dir/src/PersistentTable.cpp.o: src/PersistentTable.cpp
+CMakeFiles/hashstore.dir/src/PersistentTable.cpp.o: CMakeFiles/hashstore.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/shrads/Desktop/ADB/-plushwalsh-hash/hashstore/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/hashstore.dir/src/PersistentTable.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/hashstore.dir/src/PersistentTable.cpp.o -MF CMakeFiles/hashstore.dir/src/PersistentTable.cpp.o.d -o CMakeFiles/hashstore.dir/src/PersistentTable.cpp.o -c /Users/shrads/Desktop/ADB/-plushwalsh-hash/hashstore/src/PersistentTable.cpp
+
+CMakeFiles/hashstore.dir/src/PersistentTable.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/hashstore.dir/src/PersistentTable.cpp.i"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/shrads/Desktop/ADB/-plushwalsh-hash/hashstore/src/PersistentTable.cpp > CMakeFiles/hashstore.dir/src/PersistentTable.cpp.i
+
+CMakeFiles/hashstore.dir/src/PersistentTable.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/hashstore.dir/src/PersistentTable.cpp.s"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/shrads/Desktop/ADB/-plushwalsh-hash/hashstore/src/PersistentTable.cpp -o CMakeFiles/hashstore.dir/src/PersistentTable.cpp.s
+
+CMakeFiles/hashstore.dir/src/Utils.cpp.o: CMakeFiles/hashstore.dir/flags.make
+CMakeFiles/hashstore.dir/src/Utils.cpp.o: src/Utils.cpp
+CMakeFiles/hashstore.dir/src/Utils.cpp.o: CMakeFiles/hashstore.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/shrads/Desktop/ADB/-plushwalsh-hash/hashstore/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/hashstore.dir/src/Utils.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/hashstore.dir/src/Utils.cpp.o -MF CMakeFiles/hashstore.dir/src/Utils.cpp.o.d -o CMakeFiles/hashstore.dir/src/Utils.cpp.o -c /Users/shrads/Desktop/ADB/-plushwalsh-hash/hashstore/src/Utils.cpp
+
+CMakeFiles/hashstore.dir/src/Utils.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/hashstore.dir/src/Utils.cpp.i"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/shrads/Desktop/ADB/-plushwalsh-hash/hashstore/src/Utils.cpp > CMakeFiles/hashstore.dir/src/Utils.cpp.i
+
+CMakeFiles/hashstore.dir/src/Utils.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/hashstore.dir/src/Utils.cpp.s"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/shrads/Desktop/ADB/-plushwalsh-hash/hashstore/src/Utils.cpp -o CMakeFiles/hashstore.dir/src/Utils.cpp.s
+
 # Object files for target hashstore
 hashstore_OBJECTS = \
-"CMakeFiles/hashstore.dir/main.cpp.o"
+"CMakeFiles/hashstore.dir/main.cpp.o" \
+"CMakeFiles/hashstore.dir/src/Bucket.cpp.o" \
+"CMakeFiles/hashstore.dir/src/HashStore.cpp.o" \
+"CMakeFiles/hashstore.dir/src/LogManager.cpp.o" \
+"CMakeFiles/hashstore.dir/src/PersistentTable.cpp.o" \
+"CMakeFiles/hashstore.dir/src/Utils.cpp.o"
 
 # External object files for target hashstore
 hashstore_EXTERNAL_OBJECTS =
 
 hashstore: CMakeFiles/hashstore.dir/main.cpp.o
+hashstore: CMakeFiles/hashstore.dir/src/Bucket.cpp.o
+hashstore: CMakeFiles/hashstore.dir/src/HashStore.cpp.o
+hashstore: CMakeFiles/hashstore.dir/src/LogManager.cpp.o
+hashstore: CMakeFiles/hashstore.dir/src/PersistentTable.cpp.o
+hashstore: CMakeFiles/hashstore.dir/src/Utils.cpp.o
 hashstore: CMakeFiles/hashstore.dir/build.make
 hashstore: CMakeFiles/hashstore.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/Users/shrads/Desktop/ADB/-plushwalsh-hash/hashstore/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable hashstore"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/Users/shrads/Desktop/ADB/-plushwalsh-hash/hashstore/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking CXX executable hashstore"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/hashstore.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -108,6 +188,6 @@ CMakeFiles/hashstore.dir/clean:
 .PHONY : CMakeFiles/hashstore.dir/clean
 
 CMakeFiles/hashstore.dir/depend:
-	cd /Users/shrads/Desktop/ADB/-plushwalsh-hash/hashstore && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/shrads/Desktop/ADB/-plushwalsh-hash /Users/shrads/Desktop/ADB/-plushwalsh-hash /Users/shrads/Desktop/ADB/-plushwalsh-hash/hashstore /Users/shrads/Desktop/ADB/-plushwalsh-hash/hashstore /Users/shrads/Desktop/ADB/-plushwalsh-hash/hashstore/CMakeFiles/hashstore.dir/DependInfo.cmake "--color=$(COLOR)"
+	cd /Users/shrads/Desktop/ADB/-plushwalsh-hash/hashstore && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/shrads/Desktop/ADB/-plushwalsh-hash/hashstore /Users/shrads/Desktop/ADB/-plushwalsh-hash/hashstore /Users/shrads/Desktop/ADB/-plushwalsh-hash/hashstore /Users/shrads/Desktop/ADB/-plushwalsh-hash/hashstore /Users/shrads/Desktop/ADB/-plushwalsh-hash/hashstore/CMakeFiles/hashstore.dir/DependInfo.cmake "--color=$(COLOR)"
 .PHONY : CMakeFiles/hashstore.dir/depend
 

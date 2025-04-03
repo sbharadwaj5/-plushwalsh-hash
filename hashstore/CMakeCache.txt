@@ -202,7 +202,7 @@ HashStoreProject_BINARY_DIR:STATIC=/Users/shrads/Desktop/ADB/-plushwalsh-hash/ha
 HashStoreProject_IS_TOP_LEVEL:STATIC=ON
 
 //Value Computed by CMake
-HashStoreProject_SOURCE_DIR:STATIC=/Users/shrads/Desktop/ADB/-plushwalsh-hash
+HashStoreProject_SOURCE_DIR:STATIC=/Users/shrads/Desktop/ADB/-plushwalsh-hash/hashstore
 
 
 ########################
@@ -271,7 +271,7 @@ CMAKE_GENERATOR_PLATFORM:INTERNAL=
 CMAKE_GENERATOR_TOOLSET:INTERNAL=
 //Source directory with the top level CMakeLists.txt file for this
 // project
-CMAKE_HOME_DIRECTORY:INTERNAL=/Users/shrads/Desktop/ADB/-plushwalsh-hash
+CMAKE_HOME_DIRECTORY:INTERNAL=/Users/shrads/Desktop/ADB/-plushwalsh-hash/hashstore
 //ADVANCED property for variable: CMAKE_INSTALL_NAME_TOOL
 CMAKE_INSTALL_NAME_TOOL-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_LINKER

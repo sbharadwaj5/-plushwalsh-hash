@@ -57,7 +57,7 @@ RM = /opt/homebrew/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/shrads/Desktop/ADB/-plushwalsh-hash
+CMAKE_SOURCE_DIR = /Users/shrads/Desktop/ADB/-plushwalsh-hash/hashstore
 
 # The top-level build directory on which CMake was run.
 CMAKE_BINARY_DIR = /Users/shrads/Desktop/ADB/-plushwalsh-hash/hashstore
@@ -153,6 +153,126 @@ main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/hashstore.dir/build.make CMakeFiles/hashstore.dir/main.cpp.s
 .PHONY : main.cpp.s
 
+src/Bucket.o: src/Bucket.cpp.o
+.PHONY : src/Bucket.o
+
+# target to build an object file
+src/Bucket.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/hashstore.dir/build.make CMakeFiles/hashstore.dir/src/Bucket.cpp.o
+.PHONY : src/Bucket.cpp.o
+
+src/Bucket.i: src/Bucket.cpp.i
+.PHONY : src/Bucket.i
+
+# target to preprocess a source file
+src/Bucket.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/hashstore.dir/build.make CMakeFiles/hashstore.dir/src/Bucket.cpp.i
+.PHONY : src/Bucket.cpp.i
+
+src/Bucket.s: src/Bucket.cpp.s
+.PHONY : src/Bucket.s
+
+# target to generate assembly for a file
+src/Bucket.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/hashstore.dir/build.make CMakeFiles/hashstore.dir/src/Bucket.cpp.s
+.PHONY : src/Bucket.cpp.s
+
+src/HashStore.o: src/HashStore.cpp.o
+.PHONY : src/HashStore.o
+
+# target to build an object file
+src/HashStore.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/hashstore.dir/build.make CMakeFiles/hashstore.dir/src/HashStore.cpp.o
+.PHONY : src/HashStore.cpp.o
+
+src/HashStore.i: src/HashStore.cpp.i
+.PHONY : src/HashStore.i
+
+# target to preprocess a source file
+src/HashStore.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/hashstore.dir/build.make CMakeFiles/hashstore.dir/src/HashStore.cpp.i
+.PHONY : src/HashStore.cpp.i
+
+src/HashStore.s: src/HashStore.cpp.s
+.PHONY : src/HashStore.s
+
+# target to generate assembly for a file
+src/HashStore.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/hashstore.dir/build.make CMakeFiles/hashstore.dir/src/HashStore.cpp.s
+.PHONY : src/HashStore.cpp.s
+
+src/LogManager.o: src/LogManager.cpp.o
+.PHONY : src/LogManager.o
+
+# target to build an object file
+src/LogManager.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/hashstore.dir/build.make CMakeFiles/hashstore.dir/src/LogManager.cpp.o
+.PHONY : src/LogManager.cpp.o
+
+src/LogManager.i: src/LogManager.cpp.i
+.PHONY : src/LogManager.i
+
+# target to preprocess a source file
+src/LogManager.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/hashstore.dir/build.make CMakeFiles/hashstore.dir/src/LogManager.cpp.i
+.PHONY : src/LogManager.cpp.i
+
+src/LogManager.s: src/LogManager.cpp.s
+.PHONY : src/LogManager.s
+
+# target to generate assembly for a file
+src/LogManager.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/hashstore.dir/build.make CMakeFiles/hashstore.dir/src/LogManager.cpp.s
+.PHONY : src/LogManager.cpp.s
+
+src/PersistentTable.o: src/PersistentTable.cpp.o
+.PHONY : src/PersistentTable.o
+
+# target to build an object file
+src/PersistentTable.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/hashstore.dir/build.make CMakeFiles/hashstore.dir/src/PersistentTable.cpp.o
+.PHONY : src/PersistentTable.cpp.o
+
+src/PersistentTable.i: src/PersistentTable.cpp.i
+.PHONY : src/PersistentTable.i
+
+# target to preprocess a source file
+src/PersistentTable.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/hashstore.dir/build.make CMakeFiles/hashstore.dir/src/PersistentTable.cpp.i
+.PHONY : src/PersistentTable.cpp.i
+
+src/PersistentTable.s: src/PersistentTable.cpp.s
+.PHONY : src/PersistentTable.s
+
+# target to generate assembly for a file
+src/PersistentTable.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/hashstore.dir/build.make CMakeFiles/hashstore.dir/src/PersistentTable.cpp.s
+.PHONY : src/PersistentTable.cpp.s
+
+src/Utils.o: src/Utils.cpp.o
+.PHONY : src/Utils.o
+
+# target to build an object file
+src/Utils.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/hashstore.dir/build.make CMakeFiles/hashstore.dir/src/Utils.cpp.o
+.PHONY : src/Utils.cpp.o
+
+src/Utils.i: src/Utils.cpp.i
+.PHONY : src/Utils.i
+
+# target to preprocess a source file
+src/Utils.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/hashstore.dir/build.make CMakeFiles/hashstore.dir/src/Utils.cpp.i
+.PHONY : src/Utils.cpp.i
+
+src/Utils.s: src/Utils.cpp.s
+.PHONY : src/Utils.s
+
+# target to generate assembly for a file
+src/Utils.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/hashstore.dir/build.make CMakeFiles/hashstore.dir/src/Utils.cpp.s
+.PHONY : src/Utils.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -165,6 +285,21 @@ help:
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
+	@echo "... src/Bucket.o"
+	@echo "... src/Bucket.i"
+	@echo "... src/Bucket.s"
+	@echo "... src/HashStore.o"
+	@echo "... src/HashStore.i"
+	@echo "... src/HashStore.s"
+	@echo "... src/LogManager.o"
+	@echo "... src/LogManager.i"
+	@echo "... src/LogManager.s"
+	@echo "... src/PersistentTable.o"
+	@echo "... src/PersistentTable.i"
+	@echo "... src/PersistentTable.s"
+	@echo "... src/Utils.o"
+	@echo "... src/Utils.i"
+	@echo "... src/Utils.s"
 .PHONY : help
 
 
