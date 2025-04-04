@@ -9,6 +9,13 @@ constexpr size_t BUCKET_SIZE = 256;
 class Bucket {
 public:
     Bucket();
+    uint64_t getKeyAt(size_t index) const {
+    if (index < size) {
+        return keys[index];
+    }
+    return UINT64_MAX; // Or throw an error if you'd prefer
+    }
+
 
     bool insert(uint64_t key, uint64_t value);
     bool lookup(uint64_t key, uint64_t& value) const;
