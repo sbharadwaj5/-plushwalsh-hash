@@ -3,6 +3,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/hashstore.dir/main.cpp.o.d"
   "CMakeFiles/hashstore.dir/src/Bucket.cpp.o"
   "CMakeFiles/hashstore.dir/src/Bucket.cpp.o.d"
+  "CMakeFiles/hashstore.dir/src/DirectoryEntry.cpp.o"
+  "CMakeFiles/hashstore.dir/src/DirectoryEntry.cpp.o.d"
   "CMakeFiles/hashstore.dir/src/HashStore.cpp.o"
   "CMakeFiles/hashstore.dir/src/HashStore.cpp.o.d"
   "CMakeFiles/hashstore.dir/src/LogManager.cpp.o"

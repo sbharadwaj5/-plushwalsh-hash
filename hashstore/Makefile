@@ -177,6 +177,30 @@ src/Bucket.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/hashstore.dir/build.make CMakeFiles/hashstore.dir/src/Bucket.cpp.s
 .PHONY : src/Bucket.cpp.s
 
+src/DirectoryEntry.o: src/DirectoryEntry.cpp.o
+.PHONY : src/DirectoryEntry.o
+
+# target to build an object file
+src/DirectoryEntry.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/hashstore.dir/build.make CMakeFiles/hashstore.dir/src/DirectoryEntry.cpp.o
+.PHONY : src/DirectoryEntry.cpp.o
+
+src/DirectoryEntry.i: src/DirectoryEntry.cpp.i
+.PHONY : src/DirectoryEntry.i
+
+# target to preprocess a source file
+src/DirectoryEntry.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/hashstore.dir/build.make CMakeFiles/hashstore.dir/src/DirectoryEntry.cpp.i
+.PHONY : src/DirectoryEntry.cpp.i
+
+src/DirectoryEntry.s: src/DirectoryEntry.cpp.s
+.PHONY : src/DirectoryEntry.s
+
+# target to generate assembly for a file
+src/DirectoryEntry.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/hashstore.dir/build.make CMakeFiles/hashstore.dir/src/DirectoryEntry.cpp.s
+.PHONY : src/DirectoryEntry.cpp.s
+
 src/HashStore.o: src/HashStore.cpp.o
 .PHONY : src/HashStore.o
 
@@ -288,6 +312,9 @@ help:
 	@echo "... src/Bucket.o"
 	@echo "... src/Bucket.i"
 	@echo "... src/Bucket.s"
+	@echo "... src/DirectoryEntry.o"
+	@echo "... src/DirectoryEntry.i"
+	@echo "... src/DirectoryEntry.s"
 	@echo "... src/HashStore.o"
 	@echo "... src/HashStore.i"
 	@echo "... src/HashStore.s"

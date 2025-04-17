@@ -1,65 +1,58 @@
 #include "PersistentTable.h"
 #include <iostream>
-#include <functional> // for std::hash
+#include <cmath>
 
-// Constructor
-PersistentTable::PersistentTable(size_t directory_size)
-    : directory_size(directory_size), directory(directory_size) {
-    
-    // Initialize each DirectoryEntry with 2 buckets
-    for (auto& entry : directory) {
-        entry.buckets.resize(2);
-    }
+PersistentTable::PersistentTable(int level, int dir_size)
+    : level(level), directory_size(dir_size), next_level(nullptr) {
+    directory.resize(directory_size);
 }
 
-// Insert a key-value pair
-bool PersistentTable::insert(uint64_t key, uint64_t value) {
-    size_t index = hash(key);
+size_t PersistentTable::hash_key(uint64_t key) const {
+    int bits = std::log2(directory_size);
+    return (key >> (4 * level)) & ((1ULL << bits) - 1);
+}
+
+void PersistentTable::insert(uint64_t key, uint64_t value) {
+    size_t index = hash_key(key);
+
+    if (!directory[index])
+        directory[index] = std::make_shared<DirectoryEntry>();
+
     auto& entry = directory[index];
 
-    // Try inserting into existing buckets
-    for (auto& bucket : entry.buckets) {
-        if (bucket.insert(key, value)) {
-            return true;
-        }
+    if (entry->is_full()) {
+        migrate_entry(index);
+        insert(key, value); // Retry after migration
+    } else {
+        entry->insert(key, value);
     }
-
-    // All buckets full → create a new bucket and insert
-    Bucket new_bucket;
-    new_bucket.insert(key, value);
-    entry.buckets.push_back(new_bucket);
-    return true;
 }
 
-// Lookup a key; return true and set value if found
 bool PersistentTable::lookup(uint64_t key, uint64_t& value) {
-    size_t index = hash(key);
-    auto& entry = directory[index];
-
-    for (const auto& bucket : entry.buckets) {
-        if (bucket.lookup(key, value)) {
-            return true;
-        }
-    }
-
-    return false; // Not found
+    size_t index = hash_key(key);
+    if (directory[index] && directory[index]->lookup(key, value))
+        return true;
+    return next_level ? next_level->lookup(key, value) : false;
 }
 
-// Remove a key if it exists
-bool PersistentTable::remove(uint64_t key) {
-    size_t index = hash(key);
-    auto& entry = directory[index];
+void PersistentTable::migrate_entry(size_t dir_index) {
+    if (!next_level)
+        next_level = std::make_unique<PersistentTable>(level + 1, directory_size * 2); // or same size if preferred
 
-    for (auto& bucket : entry.buckets) {
-        if (bucket.remove(key)) {
-            return true;
-        }
-    }
+    std::vector<std::pair<uint64_t, uint64_t>> contents;
+    directory[dir_index]->collect_all(contents);
 
-    return false; // Not found
+    for (const auto& [k, v] : contents)
+        next_level->insert(k, v);
+
+    directory[dir_index]->clear();
 }
 
-// Basic hash function
-size_t PersistentTable::hash(uint64_t key) const {
-    return std::hash<uint64_t>{}(key) % directory_size;
+void PersistentTable::remove(uint64_t key) {
+    size_t index = hash_key(key);
+    if (directory[index])
+        directory[index]->remove(key);
+    else if (next_level)
+        next_level->remove(key);
 }
+

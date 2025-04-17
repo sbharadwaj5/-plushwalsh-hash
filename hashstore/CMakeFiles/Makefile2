@@ -85,12 +85,12 @@ clean: CMakeFiles/hashstore.dir/clean
 CMakeFiles/hashstore.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/hashstore.dir/build.make CMakeFiles/hashstore.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/hashstore.dir/build.make CMakeFiles/hashstore.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/shrads/Desktop/ADB/-plushwalsh-hash/hashstore/CMakeFiles --progress-num=1,2,3,4,5,6,7 "Built target hashstore"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/shrads/Desktop/ADB/-plushwalsh-hash/hashstore/CMakeFiles --progress-num=1,2,3,4,5,6,7,8 "Built target hashstore"
 .PHONY : CMakeFiles/hashstore.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/hashstore.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/shrads/Desktop/ADB/-plushwalsh-hash/hashstore/CMakeFiles 7
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/shrads/Desktop/ADB/-plushwalsh-hash/hashstore/CMakeFiles 8
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/hashstore.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/shrads/Desktop/ADB/-plushwalsh-hash/hashstore/CMakeFiles 0
 .PHONY : CMakeFiles/hashstore.dir/rule
@@ -102,7 +102,7 @@ hashstore: CMakeFiles/hashstore.dir/rule
 # codegen rule for target.
 CMakeFiles/hashstore.dir/codegen:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/hashstore.dir/build.make CMakeFiles/hashstore.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/shrads/Desktop/ADB/-plushwalsh-hash/hashstore/CMakeFiles --progress-num=1,2,3,4,5,6,7 "Finished codegen for target hashstore"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/shrads/Desktop/ADB/-plushwalsh-hash/hashstore/CMakeFiles --progress-num=1,2,3,4,5,6,7,8 "Finished codegen for target hashstore"
 .PHONY : CMakeFiles/hashstore.dir/codegen
 
 # clean rule for target.
