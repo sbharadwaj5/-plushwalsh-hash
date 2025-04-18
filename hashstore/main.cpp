@@ -57,7 +57,17 @@ void runYCSBWorkload(const std::string& file_path, PersistentTable& table) {
 
 
 int main() {
-    std::cout << "Testing Bucket behavior...\n";
+     const size_t dir_size1 = 16;
+    PersistentTable table1(/*level=*/0, /*directory_size=*/16);
+
+    // Process generated file
+    runYCSBWorkload("test/ycsb_load.txt", table1);  // Adjust path if needed
+
+    std::cout << "\nFinal Bucket Contents After YCSB Load:\n";
+    printBuckets(table1);
+
+
+    std::cout << "Testing Bucket behavior using custom test cases\n";
     Bucket b;
     b.insert(1, 100);
     b.insert(2, 200);
@@ -99,13 +109,6 @@ int main() {
 
     std::cout << "Running PLUSH-based PersistentTable with YCSB workload...\n";
 
-    const size_t dir_size1 = 16;
-    PersistentTable table1(/*level=*/0, /*directory_size=*/16);
-
-    // Process generated file
-    runYCSBWorkload("test/ycsb_load.txt", table1);  // Adjust path if needed
-
-    std::cout << "\nFinal Bucket Contents After YCSB Load:\n";
-    printBuckets(table1);
+   
     return 0;
 }
