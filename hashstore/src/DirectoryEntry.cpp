@@ -11,7 +11,7 @@ void DirectoryEntry::insert(uint64_t key, uint64_t value) {
         if (buckets.size() < MAX_BUCKETS)
             buckets.push_back(std::make_shared<Bucket>());
         else
-            return;  // Full — should migrate before this
+            return;  // Full 
     }
     buckets.back()->insert(key, value);
 }

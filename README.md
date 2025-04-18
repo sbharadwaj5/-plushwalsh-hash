@@ -1,33 +1,47 @@
 # -plushwalsh-hash
 
-# Run the command chmod +x run.sh to give change access
-# ./run.sh to run the executable 
+## Run the command chmod +x run.sh to give change access
+## ./run.sh to run the executable 
 ## The intended file structure for implementation is in place
 
 
 ## Features
--  DB is supposed to be in Persistent Memory, PLUSH is an optimised algorithm for Persistent memory that uses multi level hash table to store the variable length key value pairs.
+- DB is supposed to be in Persistent Memory, PLUSH is an optimized algorithm for Persistent memory that uses a multi-level hash table to store the variable length key-value pairs.
 - Data is KV pair stored in buckets.
-
-
-
+- DirectoryEntry manages a vector of buckets.
+- PersistentTable implements a level-based hash table
+- Each level contains a fixed-size directory of DirectoryEntry pointers
+- Keys are rehashed and moved to the next level when a directory entry overflows using dynamic hashing
 
 
 ## Implementation
-
-- load_gen.py generates ycsb run
+- load_gen.py generates cub run
 - hashstore/test/ycsb_load.txt has simulated Load
-- /src/Bucket.cpp - creating Buckets that will store the KV pairs, basic class that has insert, remove and lookup
+- /src/Bucket.cpp - creating Buckets that will store the KV pairs, a basic class that has an insert, remove, and lookup
 - /src/PersistentTable.cpp 
-- - PersistentTable is an im plementation of one hash level
-- - Each table has a directory entry pointing to a list of buckets into which the keys are hashed
-- - When these buckets overflow the lext leve of abstrction ill handle rehashing it further
-
+    - PersistentTable is an implementation of one hash level
+    - Each table has a directory entry pointing to a list of buckets into which the keys are hashed
+    - When these buckets overflow the next level of abstraction we'll handle rehashing it further
 - Each bucket is 256B and holds 16 records (8B key, 8B value)
-
-- hashstore/main.cpp is used to integrate and test
-- main.cpp has tests to check for the correctness of implementation
-- YCSB load test is yet to be done
+- hash store/main.cpp is used to integrate and test
+- YCSB is used to generate test/ycsb_load.txt to check for 
+- main.cpp has tests to check for the correctness of the implementation
+- DirectoryEntry
+    - Holds a vector of buckets (shared_ptr<Bucket>)
+    - Supports up to MAX_BUCKETS per entry
+    - insert(key, value) adds to the latest bucket or creates a new one if needed
+    - is_full() checks if all buckets are full (triggers rehash)
+    - lookup(key) searches across all buckets
+    - remove(key) deletes the key from all buckets
+    - collect_all() gathers all key-value pairs for migration
+    - clear() resets the entry by clearing all buckets
+    - get buckets() provides access for debugging/printing
+- In Persistent Table
+    - On overflow, all records in a full directory entry are collected using collect_all
+    - Then it is rehashed using more bits and then pushed to an upper level using the migrate_entry function
+- printBuckets recursively moves through different levels to print the entries in each bucket of the directory
+- runYCSBWorkload in main.cpp takes in the YCSB load, parses it, and adds it to the PersistentTable with the hash implementation already set up
+- The implementation is tested using generating a random YCSB workload and using INSERT, UPDATE, and DELETE operations to later see the levels and directory contents. To verify a small custom data is also used to check the implementation.
 
 ## Extract From the paper Plush: A Write-Optimized Persistent Log-Structured Hash-Table inspiring the project
 

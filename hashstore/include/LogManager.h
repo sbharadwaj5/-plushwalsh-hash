@@ -13,7 +13,7 @@ struct LogEntry {
 
     // Dummy persist to simulate PMem persistency barrier
     void persist() const {
-        asm volatile("" ::: "memory");  // simulates clwb + sfence
+        asm volatile("" ::: "memory");  //clwb + sfence
     }
 };
 

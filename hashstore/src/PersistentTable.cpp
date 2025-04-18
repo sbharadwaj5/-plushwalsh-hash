@@ -56,20 +56,20 @@ bool PersistentTable::lookup(uint64_t key, uint64_t& value) {
 // }
 // PLUSH LOGIC
 void PersistentTable::migrate_entry(size_t dir_index) {
-    // 1. Lazy init of next level with doubled directory size
+    //  Lazy init of next level with doubled directory size
     if (!next_level)
         next_level = std::make_unique<PersistentTable>(level + 1, directory_size * 2); // increase resolution
 
-    // 2. Gather all key-value pairs from full buckets
+    // Gather all key-value pairs from full buckets
     std::vector<std::pair<uint64_t, uint64_t>> contents;
     directory[dir_index]->collect_all(contents);
 
-    // 3. Promote all entries to the next level
+    //  Promote all entries to the next level
     for (const auto& [key, value] : contents) {
         next_level->insert(key, value);
     }
 
-    // 4. Clear this directory entry
+    //  Clear this directory entry
     directory[dir_index]->clear();
 
     // Optional: mark entry as "migrated" if you add flags later

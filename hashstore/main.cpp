@@ -65,7 +65,7 @@ int main() {
 
     std::cout << "\nFinal Bucket Contents After YCSB Load:\n";
     printBuckets(table1);
-
+    std::cout << "\n\n\n\n";
 
     std::cout << "Testing Bucket behavior using custom test cases\n";
     Bucket b;
