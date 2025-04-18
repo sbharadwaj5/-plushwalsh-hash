@@ -1,6 +1,9 @@
 #include <iostream>
 #include "Bucket.h"
 #include "PersistentTable.h"
+#include <fstream>
+#include <sstream>
+
 
 // Print the contents of all buckets at all levels recursively
 void printBuckets(const PersistentTable& table, size_t level = 0) {
@@ -11,7 +14,7 @@ void printBuckets(const PersistentTable& table, size_t level = 0) {
         const auto& entry = directory[i];
         if (!entry) continue;
 
-        std::cout << "Entry in [key, value] format" << i << ":\n";
+        std::cout << "Directory Entry " << i << ":\n";
         size_t bucket_id = 0;
         for (const auto& bucket : entry->getBuckets()) {
             std::cout << "  Bucket " << bucket_id++ << ": ";
@@ -28,6 +31,30 @@ void printBuckets(const PersistentTable& table, size_t level = 0) {
     if (table.getNextLevel())
         printBuckets(*table.getNextLevel(), level + 1);
 }
+
+
+void runYCSBWorkload(const std::string& file_path, PersistentTable& table) {
+    std::ifstream file(file_path);
+    std::string line;
+
+    while (std::getline(file, line)) {
+        std::istringstream iss(line);
+        std::string op;
+        uint64_t key, value;
+
+        iss >> op >> key;
+
+        if (op == "INSERT" || op == "UPDATE") {
+            iss >> value;
+            table.insert(key, value);
+        } else if (op == "DELETE") {
+            table.remove(key);
+        }
+    }
+
+    std::cout << "Finished processing " << file_path << "\n";
+}
+
 
 int main() {
     std::cout << "Testing Bucket behavior...\n";
@@ -49,25 +76,36 @@ int main() {
     const size_t dir_size = 4;
     PersistentTable table(/*level=*/0, dir_size);
 
-    // Insert enough records to trigger overflows and migrations
-    for (uint64_t i = 0; i < 64; ++i) {
-        table.insert(i, i * 10);
+    std::cout << "\nInserting values to cause overflow and rehashing...\n";
+
+    // Insert enough keys into same index to fill all buckets in a directory entry
+    // Force overflow and level promotion
+    size_t base_key = 0;
+    for (uint64_t i = 0; i < 300; ++i) {
+        table.insert(base_key + i * dir_size, i * 10);  // Same index pattern: keys % dir_size == 0
     }
 
-    std::cout << "\nLookup and Remove Checks...\n";
+    std::cout << "\nLooking up a few known keys to verify...\n";
     uint64_t test_val;
 
-    if (table.lookup(30, test_val))
-        std::cout << "Lookup key 30: " << test_val << "\n";
+    if (table.lookup(base_key + 20 * dir_size, test_val))
+        std::cout << "Found key: " << base_key + 20 * dir_size << " -> " << test_val << "\n";
     else
-        std::cout << "Failed to find key 30\n";
-
-    table.remove(30);
-    if (!table.lookup(30, test_val))
-        std::cout << "Key 30 removed successfully.\n";
+        std::cout << "Key not found!\n";
 
     std::cout << "\nFinal Bucket Contents:\n";
     printBuckets(table);
 
+
+    std::cout << "Running PLUSH-based PersistentTable with YCSB workload...\n";
+
+    const size_t dir_size1 = 16;
+    PersistentTable table1(/*level=*/0, /*directory_size=*/16);
+
+    // Process generated file
+    runYCSBWorkload("test/ycsb_load.txt", table1);  // Adjust path if needed
+
+    std::cout << "\nFinal Bucket Contents After YCSB Load:\n";
+    printBuckets(table1);
     return 0;
 }
